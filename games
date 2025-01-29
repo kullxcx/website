@@ -1,1 +1,21 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #252525; /* dark gray */
+      color: #fff; /* white */
+    }
+    h1, h2, h3, etc. {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<img src="IMG_3875.jpg" width="200"
+<h1>Games Tier List</h1>
+<img src="games_tier_list.jpeg" width="200"
+<p>These are all the story based games I have finished. I'm ranking them based on how much I enjoyed them overall, anything C and over is positive.
+I've also only included games I remember, so no pokemon games even though I doubt those would score very high lol. </p>
+</body>
+</html>
