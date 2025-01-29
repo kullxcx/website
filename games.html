@@ -40,6 +40,17 @@ I've also only included games I remember, so no pokemon games even though I doub
       info.style.display = 'none';
     }
   }
+   document.getElementById('comment-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var name = document.getElementById('user-name').value;
+    var comment = document.getElementById('comment-text').value;
+    var commentsContainer = document.getElementById('comments-container');
+    var newComment = document.createElement('div');
+    newComment.classList.add('comment');
+    newComment.innerHTML = '<strong>' + name + ':</strong><p>' + comment + '</p>';
+    commentsContainer.appendChild(newComment);
+    document.getElementById('comment-form').reset();
+  });
 </script>
 </body>
 </html>
