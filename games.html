@@ -38,6 +38,18 @@
 I've also only included games I remember, so no pokemon games even though I doubt those would score very high lol.</p>
 </div>
 
+  <div class="comment-section">
+  <h2>Comments</h2>
+  <div id="comments-container"></div>
+  <form id="comment-form">
+    <label for="user-name">Name:</label><br>
+    <input type="text" id="user-name" name="user-name" required><br><br>
+    <label for="comment-text">Comment:</label><br>
+    <textarea id="comment-text" name="comment-text" rows="4" required></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
 <script>
   function toggleInfo() {
     var info = document.getElementById('additional-info');
