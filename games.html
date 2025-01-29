@@ -13,6 +13,13 @@
       display: flex;
       justify-content: flex-start;
     }
+    .comment-section {
+      margin-top: 20px;
+    }
+    .comment {
+      border-bottom: 1px solid #555;
+      padding: 10px 0;
+    }
   </style>
 </head>
 <body>
@@ -40,6 +47,7 @@ I've also only included games I remember, so no pokemon games even though I doub
       info.style.display = 'none';
     }
   }
+  
    document.getElementById('comment-form').addEventListener('submit', function(event) {
     event.preventDefault();
     var name = document.getElementById('user-name').value;
