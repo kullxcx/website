@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       background-color: #252525;
@@ -14,6 +15,8 @@
       display: flex;
       gap: 30px;
       justify-content: center;
+        width: 100%;
+      padding: 20px;
     }
     .content {
       display: flex;
@@ -40,6 +43,18 @@
     .comment {
       border-bottom: 1px solid #555;
       padding: 10px 0;
+    }
+     img {
+      max-width: 100%;
+      height: auto;
+    }
+    @media (min-width: 600px) {
+      .container {
+        flex-direction: row;
+      }
+      .content {
+        flex-direction: row;
+      }
     }
   </style>
 </head>
