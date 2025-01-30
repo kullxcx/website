@@ -1,25 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="icon" href="IMG_3877.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG_3877.ico" type="image/x-icon">
   <style>
     body {
-      background-color: #252525; /* dark gray */
-      color: #fff; /* white */
-    }
-    h1, h2, h3, etc. {
+      background-color: #252525;
       color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
-    .blue-text {
-      color: blue;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .profile-pic {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+    }
+    .profile-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .profile-info h1, .profile-info p {
+      margin: 5px 0;
+    }
+    .contact-icon {
+      width: 300px;
+    }
+    @media (min-width: 600px) {
+     .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-icon {
+        width: 400px;
+      }
     }
   </style>
 </head>
 <body>
-<img src="IMG_3877.jpg" width="200" <alt="Image with link to ="www.example.com"> 
-<h1>Recent</h1>
-<p><a href="games.html" class="blue-text">DOOM: Eternal Review</a> 1/29/25</p>
-</a>
+  <div class="container">
+    <img src="IMG_3877.jpg" alt="Profile Picture" class="profile-pic">
+    <div class="profile-info">
+      <h1>Ash Kull</h1>
+      <p>Milk Sponge.</p> <br>
+       <a href="mailto:your-email@example.com" class="contact-button">
+  <img src="contact_button.png" alt="Contact" class="contact-icon">
+         </a>
+         <br><h2>Reviews</h2> <br>
+         <a href="games.html">
+         <img src="games_button.png" alt="Games">
+           </a>
+</div>
+    </div>
+  </div>
 </body>
 </html>
