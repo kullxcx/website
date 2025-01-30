@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: 
 Disallow: /games.html
-Disallow /contact.html
+Disallow: /contact.html
+Disallow: /shrek.html
