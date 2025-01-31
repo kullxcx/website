@@ -12,11 +12,11 @@
       align-items: center;
       margin:0;
     }
-     .container {
+    .container {
       display: flex;
-       justify-content: column;
+      justify-content: column;
       gap: 30px;
-        width: 80%;
+      width: 80%;
       padding: 20px;
     }
     .content {
@@ -24,7 +24,7 @@
       flex-direction: column;
       align-items:center;
       padding: 30px 0 0 0;
-      }
+    }
     .image-container {
       position: relative;
       text-align: center;
@@ -40,29 +40,50 @@
       transform: translate(-50%, -50%);
       font-size: 25px;
     }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
+      margin: 10px 2px;
+      cursor: pointer;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="content">
-<a href="index.html">
-<img src="IMG_3877.jpg" width="100" alt="Image">
-    </a>
+      <a href="index.html">
+        <img src="IMG_3877.jpg" width="100" alt="Image">
+      </a>
       <br>
       <a href="/shrek.html">
         <img src="email_button1.png" width="400" alt="Email Shrek">
       </a>
-            <div class="image-container">
+      <div class="image-container">
         <img src="discord1.png" alt="Discord">
-        <div class="image-text">@ash.kull</div>
-              <br><br>
-               <div class="image-container">
+        <div class="image-text">@ash.kull <button onclick="copyText('@ash.kull')">Copy</button></div>
+      </div>
+      <div class="image-container">
         <img src="bluesky1.png" alt="Bluesky">
-        <div class="image-text"><br><br>@ashkull.com</div>
-     </div>
-   </div>
-</div>
-  </form>
-</script>
+        <div class="image-text">@ashkull.com <button onclick="copyText('@ashkull.com')">Copy</button></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    Works best in Firefox
+  </footer>
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        alert('Copied to clipboard: ' + text);
+      }, function(err) {
+        alert('Failed to copy: ', err);
+      });
+    }
+  </script>
 </body>
 </html>
