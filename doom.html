@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG_3877.ico" type="image/x-icon">
+  <style>
+    body {
+      background-color: #252525;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin:0;
+    }
+     .container {
+      display: flex;
+       justify-content: column;
+      gap: 30px;
+        width: 100%;
+      padding: 20px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      padding: 30px 0 0 0;
+    }
+    .tier-list {
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px 0 0 0;
+    }
+    h1, h2, h3, etc. {
+      color: #fff;
+    }
+    .button-container {
+      display: flex;
+      justify-content: flex-start;
+    }
+    .comment-section {
+      margin-top: 20px;
+    }
+    .comment {
+      border-bottom: 1px solid #555;
+      padding: 10px 0;
+    }
+     img {
+      max-width: 100%;
+      height: auto;
+    }
+    @media (min-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+      .content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+<a href="index.html">
+  <div style="display: flex; gap: 10px;">
+<img src="IMG_3877.jpg" width="100" alt="Image">
+    </a>
+      </div>
+    <h1>Game Reviews</h1>
+  <h1>DOOM: Eternal Review</h1>
+    <p1>By Ash Kull, 1/29/25.</p1>
+  <img src="doometernalreview.jpg" width="1100">
+        <div class="content">
+  <div class="comment-section">
+  <h2>Comments</h2>
+  <div id="comments-container"></div>
+  <form id="comment-form">
+    <label for="user-name">Name:</label><br>
+    <input type="text" id="user-name" name="user-name" required><br><br>
+    <label for="comment-text">Comment:</label><br>
+    <textarea id="comment-text" name="comment-text" rows="4" required></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+  </div>
+    <div class="tier-list">
+      <img src="games_tier_list.jpeg" width="250"> <br>
+      <button class="button" onclick="toggleInfo()">Tier List Info</button>
+      <div id="additional-info" style="display: none;">
+  <p>These are all the story based games I have finished.
+    I'm ranking them based on how much I enjoyed them overall,anything C and over is positive.
+    I've also only included games I remember, so no pokemon games even though I doubt those would score very high lol.
+Also Shoutout to James Orlowski for the amazing <a href="https://tiercreator.com">TierCreator</a> app 
+  on IOS, not sponsored just an amazing service with no bullshit ads or personal data collection.</p>
+</div>
+    </div>
+  </div>
+
+<script>
+  function toggleInfo() {
+    var info = document.getElementById('additional-info');
+    if (info.style.display === 'none') {
+      info.style.display = 'block';
+    } else {
+      info.style.display = 'none';
+    }
+  }
+  
+   document.getElementById('comment-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var name = document.getElementById('user-name').value;
+    var comment = document.getElementById('comment-text').value;
+    var commentsContainer = document.getElementById('comments-container');
+    var newComment = document.createElement('div');
+    newComment.classList.add('comment');
+    newComment.innerHTML = '<strong>' + name + ':</strong><p>' + comment + '</p>';
+    commentsContainer.appendChild(newComment);
+    document.getElementById('comment-form').reset();
+  });
+</script>
+</body>
+</html>
+
