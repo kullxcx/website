@@ -25,12 +25,6 @@
       align-items:center;
       padding: 30px 0 0 0;
     }
-    .tier-list {
-      display:flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 30px 0 0 0;
-    }
     h1, h2, h3, etc. {
       color: #fff;
     }
@@ -67,7 +61,6 @@
 <img src="IMG_3877.jpg" width="100" alt="Image">
     </a>
       </div>
-    <h1>Game Reviews</h1>
   <h1>DOOM: Eternal Review</h1>
     <p1>By Ash Kull, 1/29/25.</p1>
   <img src="doometernalreview.jpg" width="1100">
@@ -84,29 +77,6 @@
   </form>
 </div>
   </div>
-    <div class="tier-list">
-      <img src="games_tier_list.jpeg" width="250"> <br>
-      <button class="button" onclick="toggleInfo()">Tier List Info</button>
-      <div id="additional-info" style="display: none;">
-  <p>These are all the story based games I have finished.
-    I'm ranking them based on how much I enjoyed them overall,anything C and over is positive.
-    I've also only included games I remember, so no pokemon games even though I doubt those would score very high lol.
-Also Shoutout to James Orlowski for the amazing <a href="https://tiercreator.com">TierCreator</a> app 
-  on IOS, not sponsored just an amazing service with no bullshit ads or personal data collection.</p>
-</div>
-    </div>
-  </div>
-
-<script>
-  function toggleInfo() {
-    var info = document.getElementById('additional-info');
-    if (info.style.display === 'none') {
-      info.style.display = 'block';
-    } else {
-      info.style.display = 'none';
-    }
-  }
-  
    document.getElementById('comment-form').addEventListener('submit', function(event) {
     event.preventDefault();
     var name = document.getElementById('user-name').value;
