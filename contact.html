@@ -39,7 +39,7 @@
       top: 55%;
       left: 60%;
       transform: translate(-50%, -50%);
-      font-size: 4vw;
+      font-size: 2.5vw;
     }
     button {
       background-color: #4CAF50;
@@ -51,6 +51,16 @@
       margin: 1vw 0.2vw;
       cursor: pointer;
       font-size: 1.6vw;
+    }
+    @media (max-width: 768px) {
+      body {
+        font-size: calc(2vw + 2vh + 1vmin);
+      }
+      .image-text {
+        font-size: 4vw;
+      }
+      button {
+        font-size: 3vw;
       }
     }
   </style>
