@@ -89,14 +89,21 @@
   <footer>
     Works best in Firefox
   </footer>
-  <script>
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(function() {
-        alert('Copied to clipboard: ' + text);
-      }, function(err) {
-        alert('Failed to copy: ', err);
-      });
-    }
-  </script>
+<script>
+  function copyText(text, button) {
+    navigator.clipboard.writeText(text).then(function() {
+      alert('Copied to clipboard: ' + text);
+      button.textContent = "Copied!";
+    }, function(err) {
+      alert('Failed to copy: ' + err);
+    });
+  }
+
+  document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', function() {
+      copyText(this.previousElementSibling.textContent, this);
+    });
+  });
+</script>
 </body>
 </html>
