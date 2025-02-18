@@ -98,12 +98,6 @@
       alert('Failed to copy: ' + err);
     });
   }
-
-  document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function() {
-      copyText(this.previousElementSibling.textContent, this);
-    });
-  });
 </script>
 </body>
 </html>
