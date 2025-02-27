@@ -4,30 +4,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="IMG_3877.ico" type="image/x-icon">
   <style>
-  body {
-  background-color: #252525;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Center vertically */
-  height: 100vh; /* Full viewport height */
-  margin: 0;
-}
-.container {
-  display: flex;
-  flex-direction: column; /* Ensure the container is a column */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  gap: 30px;
-  width: 80%;
-  max-width: 600px; /* Optional: Limit the max width */
-  padding: 20px;
-}
+    body {
+      background-color: #252525;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* Center vertically */
+      height: 100vh; /* Full viewport height */
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column; /* Ensure the container is a column */
+      align-items: center; /* Center items horizontally */
+      justify-content: center; /* Center items vertically */
+      gap: 30px;
+      width: 80%;
+      max-width: 600px; /* Optional: Limit the max width */
+      padding: 20px;
+    }
     .content {
       display: flex;
       flex-direction: column;
-      align-items:center;
+      align-items: center;
       padding: 30px 0 0 0;
     }
     .image-container {
@@ -37,24 +37,43 @@
     }
     .image-container img {
       width: 100%;
+      height: auto;
     }
     .image-text {
       position: absolute;
-      top: 55%;
-      left: 60%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 25px;
+      font-size: 1.5em;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     }
     button {
       background-color: #4CAF50;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 1em 2em;
       text-align: center;
       display: inline-block;
-      margin: 10px 2px;
+      margin: 1em 0.5em;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 1em;
+    }
+    a img {
+      width: 80px;
+      height: auto;
+    }
+    @media (max-width: 600px) {
+      .container {
+        width: 95%;
+        padding: 4vw;
+      }
+      .image-text {
+        font-size: 1.2em;
+      }
+      button {
+        padding: 0.8em 1.6em;
+        font-size: 0.9em;
+      }
     }
   </style>
 </head>
@@ -66,7 +85,7 @@
       </a>
       <br>
       <a href="/shrek.html">
-        <img src="button_email.png" alt="Email Shrek">
+        <img src="email_button1.png" alt="Email Shrek">
       </a>
       <div class="image-container">
         <img src="discord1.png" alt="Discord">
