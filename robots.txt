@@ -3,3 +3,4 @@ Disallow:
 Disallow: /games.html
 Disallow: /contact.html
 Disallow: /shrek.html
+Disallow: /posts.html
