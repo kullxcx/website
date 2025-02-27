@@ -1,41 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=0.4, maximum-scale=0.4, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="IMG_3877.ico" type="image/x-icon">
   <style>
     body {
       background-color: #252525;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin:0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
     .container {
       display: flex;
-      justify-content: column;
-      gap: 30px;
-      width: 80%;
+      flex-direction: column;
+      align-items: center;
       padding: 20px;
     }
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items:center;
-      padding: 30px 0 0 0;
+    .profile-pic {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
     }
+    .profile-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .profile-info h1, .profile-info p {
+      margin: 5px 0;
+    }
+    .button {
+      width: 365px; <!-- who the fuck are you i'm a brat when i'm bumpin' that -->
+    }
+    @media (min-width: 600px) {
+     .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .button {
+        width: 465px; 
+        }
+    }
+    .button2 {
+      width: 400px;
+    }
+    @media (min-width: 600px) {
+     .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .button2 {
+        width: 500px;
+        }
+    footer {
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+      background-color: #333;
+      bottom: 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="content">
-      <a href="index.html">
-        <img src="IMG_3877.jpg" width="300" alt="Image">
-      </a>
+    <img src="IMG_3877.jpg" alt="Profile Picture" class="profile-pic">
+    <div class="profile-info">
+      <h1>Ash Kull</h1>
+      <p>Milk Sponge.</p> <br>
+       <a href="/contact.html">
+  <img src="button_contact.png" alt="Contact" class="button">
+         </a>
       <br>
-    }
-  </script>
+             <a href="/inprogress.html">
+  <img src="button_posts.png" alt="Posts" class="button">
+         </a>
+         <br><h2>My Reviews</h2>
+         <a href="inprogress.html">
+         <img src="music.png" alt="music" class="button2">
+           </a> <br>
+               <a href="inprogress.html">
+         <img src="button_games.png" alt="Games" class="button2">
+               </a> <br>
+         <a href="inprogress.html">
+         <img src="button_movies_tv.png" alt="Games" class="button2">
+               </a>
+</div>
+    </div>
+  </div>
+    <footer>
+    Works best in Firefox
+  </footer>
 </body>
 </html>
