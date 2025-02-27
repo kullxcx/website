@@ -14,12 +14,14 @@
   height: 100vh; /* Full viewport height */
       margin:0;
     }
-    .container {
-      display: flex;
-      justify-content: column;
-      gap: 30px;
-      width: 80%;
-      padding: 20px;
+  display: flex;
+  flex-direction: column; /* Ensure the container is a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  gap: 30px;
+  width: 80%;
+  max-width: 600px; /* Optional: Limit the max width */
+  padding: 20px;
     }
     .content {
       display: flex;
