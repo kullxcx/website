@@ -29,49 +29,90 @@
     .profile-info h1, .profile-info p {
       margin: 5px 0;
     }
-    .button {
-      width: 365px; <!-- who the fuck are you i'm a brat when i'm bumpin' that -->
-    }
-    @media (min-width: 600px) {
-     .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .button {
-        width: 465px; 
-        }
-    }
-    .button2 {
-      width: 400px;
-    }
-    @media (min-width: 600px) {
-     .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .button2 {
-        width: 500px;
-        }
-    footer {
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
       width: 100%;
-      background-color: #333;
-      bottom: 0;
-      }
+      margin-top: 20px;
+    }
+    .grid-item img {
+      width: 100%;
+      cursor: pointer;
+    }
+    .preview-modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .preview-modal img {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <div class="container">
-     <a href="index.html">
+    <a href="index.html">
     <img src="IMG_3877.jpg" alt="Profile Picture" class="profile-pic">
     <div class="profile-info">
-     </a>
+    </a>
       <h1>Ash Kull</h1>
       <p>Milk Sponge.</p> <br>
     </div>
+
+    <div class="grid-container">
+      <div class="grid-item"><img src="image1.jpg" alt="Image 1"></div>
+      <div class="grid-item"><img src="image2.jpg" alt="Image 2"></div>
+      <div class="grid-item"><img src="image3.jpg" alt="Image 3"></div>
+      <div class="grid-item"><img src="image4.jpg" alt="Image 4"></div>
+      <!-- Add more images as needed -->
+    </div>
   </div>
+
+  <div id="previewModal" class="preview-modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="imgPreview">
+  </div>
+
+  <script>
+    var modal = document.getElementById("previewModal");
+    var modalImg = document.getElementById("imgPreview");
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    document.querySelectorAll('.grid-item img').forEach(img => {
+      img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+      }
+    });
+
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
