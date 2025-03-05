@@ -68,7 +68,7 @@
     <img src="IMG_3877.jpg" alt="Profile Picture" class="profile-pic">
     <div class="profile-info">
       <h1>Ash Kull</h1>
-      <p>Milk Sponge.</p> <br>
+      <p id="randomPhrase"></p> <br>
        <a href="/contact.html">
   <img src="button_contact.png" alt="Contact" class="button">
          </a>
@@ -79,5 +79,11 @@
 </div>
     </div>
   </div>
+  <script>
+    const phrases = ["milk sponge", "who tf r u im a brat when i'm bumpin' that", "cant c me", "i use linux btw", "if you reload the page this text will change", "nothin' at all!", "super fly", "von dutch"];
+    const randomIndex = Math.floor(Math.random() * phrases.length);
+    const randomPhrase = phrases[randomIndex];
+    document.getElementById("randomPhrase").textContent = randomPhrase;
+  </script>
 </body>
-</html>
+</html>whe
