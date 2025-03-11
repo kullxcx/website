@@ -29,6 +29,21 @@
     .profile-info h1, .profile-info p {
       margin: 5px 0;
     }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #333;
+      border: 1px solid #444;
+      margin: 0 5px;
+    }
+    .tab.active {
+      background-color: #555;
+    }
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -43,11 +58,11 @@
     .grid-item img {
       width: 100%;
     }
-      @media (min-width: 1024px) {
-    .grid-item {
-      transform: scale(1.2);
+    @media (min-width: 1024px) {
+      .grid-item {
+        transform: scale(1.2);
+      }
     }
-  }
     .preview-modal {
       display: none;
       position: fixed;
@@ -96,6 +111,11 @@
       <p id="randomPhrase"></p> <br>
     </div>
 
+    <div class="tabs">
+      <div class="tab active">Tab 1</div>
+      <div class="tab">Tab 2</div>
+    </div>
+
     <div class="grid-container">
       <div class="grid-item" data-images='["IMG_4083.JPG", "anime.png"]'>
         <img src="anime.png" alt="Image 1">
@@ -113,13 +133,11 @@
   </div>
 
   <script>
-     const phrases = ["milk sponge", "midwest princess", "Salmon Roe", "i hate zenitsu", "hey now, say now", "you wish", "so julia", "ai hater", "something like that", "pink diamond in the dark", "私はLです", "who tf r u im a brat when i'm bumpin' that", "cant c me", "i use linux btw", "if you reload the page this text will change", "nothin' at all!", "super fly", "von dutch", "call me if you get lost", "linux coping since 2023", "i used to like coffeezilla, until he investigated me.", "i manually change the splash text every time you visit", "miklo dies... alot", "jesus christ situation is crazy", "patriarchy is bad"];
+    const phrases = ["milk sponge", "midwest princess", "Salmon Roe", "i hate zenitsu", "hey now, say now", "you wish", "so julia", "ai hater", "something like that", "pink diamond in the dark", "私[...]
     const randomIndex = Math.floor(Math.random() * phrases.length);
     const randomPhrase = phrases[randomIndex];
     document.getElementById("randomPhrase").textContent = randomPhrase;
-        var modal = document.getElementById("previewModal");
-      </script>
-      <script>
+
     var modal = document.getElementById("previewModal");
     var modalImg = document.getElementById("imgPreview");
     var thumbnailContainer = document.getElementById("thumbnailContainer");
