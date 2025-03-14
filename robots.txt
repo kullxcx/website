@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: 
-Disallow: /games.html
+Disallow: /inprogress.html
 Disallow: /contact.html
 Disallow: /shrek.html
 Disallow: /posts.html
+Disallow: /test.html
