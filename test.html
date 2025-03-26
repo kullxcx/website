@@ -107,8 +107,38 @@
       margin-top: 10px;
     }
     .profile-info h1, .profile-info p {
-    margin: 5px 0;
-}
+      margin: 5px 0;
+    }
+    .comment-section {
+      margin-top: 30px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .comment-section h2, .comment-section h3 {
+      color: #fff;
+    }
+    .comment-section form {
+      display: flex;
+      flex-direction: column;
+    }
+    .comment-section input[type="text"], .comment-section textarea {
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .comment-section input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #555;
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .comment-section input[type="submit"]:hover {
+      background-color: #333;
+    }
   </style>
 </head>
 <body>
@@ -124,9 +154,9 @@
       <a href="contact.html" class="tab">Contact</a>
     </div>
     <div class="grid-container">
-               <div class="grid-item" data-images='["kendrick_tier_list.jpeg", "kl.png"]'>
+      <div class="grid-item" data-images='["kendrick_tier_list.jpeg", "kl.png"]'>
         <img src="kl.png" alt="KL Tier List">
-               </div>
+      </div>
       <div class="grid-item" data-images='["animemanga_tier_list.jpeg", "anime.png"]'>
         <img src="anime.png" alt="Anime Tier List">
       </div>
@@ -146,6 +176,21 @@
     <img class="modal-content" id="imgPreview">
     <div class="thumbnail" id="thumbnailContainer"></div>
     <div class="caption" id="imgCaption"></div>
+  </div>
+
+  <div class="comment-section">
+    <h2>Leave a Comment</h2>
+    <form id="commentForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+      <label for="comment">Comment:</label><br>
+      <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    <div id="commentsContainer">
+      <h3>Comments:</h3>
+      <!-- Comments will be displayed here -->
+    </div>
   </div>
 
   <script>
@@ -195,6 +240,30 @@
         modal.style.display = "none";
       }
     }
+
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const comment = document.getElementById('comment').value;
+
+      const commentContainer = document.createElement('div');
+      commentContainer.classList.add('comment');
+
+      const commentName = document.createElement('h4');
+      commentName.textContent = name;
+      commentContainer.appendChild(commentName);
+
+      const commentText = document.createElement('p');
+      commentText.textContent = comment;
+      commentContainer.appendChild(commentText);
+
+      document.getElementById('commentsContainer').appendChild(commentContainer);
+
+      // Clear the form
+      document.getElementById('name').value = '';
+      document.getElementById('comment').value = '';
+    });
   </script>
 </body>
 </html>
