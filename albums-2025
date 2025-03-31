@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMG_3877.ico" type="image/x-icon">
+    <title>Why I Made A Website</title>
+    <style>
+        body {
+            background-color: #252525;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: white;
+        }
+        header, footer {
+            background: #181818;
+            padding: 10px 20px;
+            text-align: center;
+            position: relative;
+        }
+        article {
+            margin: 20px 0;
+        }
+        h1, h2, h3 {
+            color: white;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="position: absolute; top: 10px; left: 10px; color: white; text-decoration: none;">&larr; Back</a>
+        <div class="container">
+            <a href="./index">
+                <img src="IMG_3877.jpg" alt="Profile Picture" class="profile-pic">
+            </a>
+        </div>
+        <h1>Why I Made A Website</h1>
+    </header>
+    <article>
+        <section>
+            <h2>Why Not Just Use Instagram?</h2>
+            <p>I basicly wanted to use Instagram but since Instagram is rushing to become TikTok, I just went ahead and made my own Instagram.</p>
+        </section>
+        <section>
+            <h2>Why Start From Scratch?</h2>
+            <p>I got inspired by <a href="https://imaginaldisk.world/map"> Magdalena Bays website</a> and <a href="https://www.jpegmafia.net"> JPEGMAFIAs website</a> which are actually really fun to use as opposed to the boring corperate landscape entrenches the modern internet.</p>
+        </section>
+        <section>
+            <h2>How Will You Get Internet Clout From This?</h2>
+            <p>I wont.</p>
+        </section>
+    </article>
+    <footer>
+        <p>Author: Ash Kull</p>
+        <p>Date: March 12, 2025</p>
+    </footer>
+</body>
+</html>
