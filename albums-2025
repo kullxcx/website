@@ -40,20 +40,22 @@
                 <img src="IMG_3877.jpg" alt="Profile Picture" class="profile-pic">
             </a>
         </div>
-        <h1>Why I Made A Website</h1>
+        <h1>Best Albums 2025</h1>
+            <p>In order of release, in progress.</p>
     </header>
     <article>
         <section>
-            <h2>Why Not Just Use Instagram?</h2>
-            <p>I basicly wanted to use Instagram but since Instagram is rushing to become TikTok, I just went ahead and made my own Instagram.</p>
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/65/14/2c/65142c17-4e8d-3049-0272-363307f09160/Job269ee82f-3d63-436c-bbf6-14db5a51e33b-183757043-PreviewImage_Preview_Image_Intermediate_nonvideo_sdr_359319945_2021523669-Time1736908482381.png/296x296bb.webp" alt="Balloonerism_Cover">
+            <h2>Mac Miller- Baloonerism</h2>
+            <p></p>
         </section>
         <section>
-            <h2>Why Start From Scratch?</h2>
-            <p>I got inspired by <a href="https://imaginaldisk.world/map"> Magdalena Bays website</a> and <a href="https://www.jpegmafia.net"> JPEGMAFIAs website</a> which are actually really fun to use as opposed to the boring corperate landscape entrenches the modern internet.</p>
+            <h2>FKA twigs- EUSEXUA</h2>
+            <p></p>
         </section>
         <section>
-            <h2>How Will You Get Internet Clout From This?</h2>
-            <p>I wont.</p>
+            <h2>The Weeknd- Hurry Up Tommorow</h2>
+            <p></p>
         </section>
     </article>
     <footer>
