@@ -44,6 +44,79 @@
     .tab.active {
       background-color: #555;
     }
+    .cylinder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  transform-style: preserve-3d;
+  animation: rotate 12s linear infinite;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px #0008;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.square::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  padding: 3px 12px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s, bottom 0.3s;
+  pointer-events: none;
+  font-size: 15px;
+}
+
+.square:hover {
+  transform: translate(-50%, -50%) scale(1.25) !important;
+  z-index: 10;
+}
+
+.square:hover::after {
+  opacity: 1;
+  bottom: 10px;
+}
+
+/* Cylinder positions for 8 squares */
+.square:nth-child(1) { transform: translate(-50%, -50%) rotateY(0deg) translateZ(150px);}
+.square:nth-child(2) { transform: translate(-50%, -50%) rotateY(45deg) translateZ(150px);}
+.square:nth-child(3) { transform: translate(-50%, -50%) rotateY(90deg) translateZ(150px);}
+.square:nth-child(4) { transform: translate(-50%, -50%) rotateY(135deg) translateZ(150px);}
+.square:nth-child(5) { transform: translate(-50%, -50%) rotateY(180deg) translateZ(150px);}
+.square:nth-child(6) { transform: translate(-50%, -50%) rotateY(225deg) translateZ(150px);}
+.square:nth-child(7) { transform: translate(-50%, -50%) rotateY(270deg) translateZ(150px);}
+.square:nth-child(8) { transform: translate(-50%, -50%) rotateY(315deg) translateZ(150px);}
+
+/* Animation for rotation */
+@keyframes rotate {
+  to {
+    transform: rotateY(360deg);
+  }
+}
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -169,7 +242,7 @@
                      "i use linux btw", "if you reload the page this text will change", "nothin' at all!", "super fly", "von dutch",
                      "call me if you get lost", "linux coping since 2023", "i used to like coffeezilla, until he investigated me.",
                      "i manually change the splash text every time you visit", "miklo dies... alot", "jesus christ situation is crazy",
-                    "i am JUSTICE","i can't stand the rain", "don't rely on other men", "u r idoit", "not even close"];
+                    "i am JUSTICE","i can't stand the rain", "don't rely on other men", "u r idoit", "not even close","100% vibe coded (sorry)","JRJRJR","JESUS NEVER HAD IT WITH A FREAK BITCH"];
     const randomIndex = Math.floor(Math.random() * phrases.length);
     const randomPhrase = phrases[randomIndex];
     document.getElementById("randomPhrase").textContent = randomPhrase;
