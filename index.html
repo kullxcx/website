@@ -162,16 +162,20 @@
       max-width: 90%;
       max-height: 90%;
     }
-    .popup {
+.popup {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  background: rgba(0,0,0,0.8);
-  padding: 10px;
-  z-index: 9999;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
+  top: 20%;
+  left: 20px; /* Left popup default position */
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  display: none; /* Hidden by default */
+}
+
+.popup.right {
+  right: 20px;
+  left: auto; /* Override left for right popup */
 }
 .close-btn {
   color: #fff;
@@ -231,6 +235,9 @@
   <span class="close-btn" onclick="document.getElementById('desktop-popup').style.display='none'">&times;</span>
   <img src="https://i.imgflip.com/a0t2vf.gif" alt="brain-removal">
 </div>
+    <div id="popup-right" class="popup right">
+        <img src="milksponge.png" alt="milksponge">
+    </div>
     <div class="tabs">
       <div class="tab active">Home</div>
       <a href="contact.html" class="tab">Contact</a>
