@@ -5,3 +5,4 @@ Disallow: /contact.html
 Disallow: /shrek.html
 Disallow: /posts.html
 Disallow: /test.html
+Disallow: /style-2025.html
