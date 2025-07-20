@@ -33,6 +33,59 @@ body {
             width: 150px;
             height: 150px;
         }
+         .cylinder-container {
+      perspective: 1000px;
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+    .cylinder {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: rotate 8s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: rotateY(0deg);}
+      to { transform: rotateY(360deg);}
+    }
+    .cylinder-face {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 180px;
+      height: 220px;
+      transform-origin: center center -200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    /* Position each face at 120deg intervals */
+    .cylinder-face:nth-child(1) { transform: rotateY(0deg)   translateZ(200px);}
+    .cylinder-face:nth-child(2) { transform: rotateY(120deg) translateZ(200px);}
+    .cylinder-face:nth-child(3) { transform: rotateY(240deg) translateZ(200px);}
+
+    .cylinder-face img {
+      width: 160px;
+      height: 160px;
+      border-radius: 16px;
+      transition: transform 0.3s, filter 0.3s;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    }
+    .cylinder-face:hover img {
+      transform: scale(1.15) rotate(6deg);
+      filter: brightness(1.1) saturate(1.5);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.65);
+    }
+    .caption {
+      margin-top: 12px;
+      font-size: 1rem;
+      color: #eee;
+      text-shadow: 0 1px 4px #000;
+      text-align: center;
+    }
     </style>
 </head>
 <body>
@@ -44,6 +97,22 @@ body {
             </a>
         </div>
         <h1>STYLE 2025</h1>
+          <div class="cylinder-container">
+    <div class="cylinder">
+      <div class="cylinder-face">
+        <img src="image1.jpg" alt="Image 1">
+        <div class="caption">Caption for Image 1</div>
+      </div>
+      <div class="cylinder-face">
+        <img src="image2.jpg" alt="Image 2">
+        <div class="caption">Caption for Image 2</div>
+      </div>
+      <div class="cylinder-face">
+        <img src="image3.jpg" alt="Image 3">
+        <div class="caption">Caption for Image 3</div>
+      </div>
+    </div>
+  </div>
     </header>
     <article>
         <section>
