@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMG_3877.ico" type="image/x-icon">
+    <title>STYLE: 2025</title>
+    <style>
+        body {
+            background-color: #252525;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: white;
+        }
+        header, footer {
+            background: #181818;
+            padding: 10px 20px;
+            text-align: center;
+            position: relative;
+        }
+        article {
+            margin: 20px 0;
+        }
+        h1, h2, h3 {
+            color: white;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="position: absolute; top: 10px; left: 10px; color: white; text-decoration: none;">&larr; Back</a>
+        <div class="container">
+            <a href="./index">
+                <img src="IMG_3877.jpg" alt="Profile Picture" class="profile-pic">
+            </a>
+        </div>
+        <h1>STYLE 2025</h1>
+    </header>
+    <article>
+        <section>
+            <h2>SPRING</h2>
+
+        </section>
+        <section>
+            <h2>SUMMER</h2>
+
+        </section>
+    </article
+    <footer>
+        <p>Author: Ash Kull</p>
+    </footer>
+</body>
+</html>
