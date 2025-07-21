@@ -144,19 +144,32 @@
       .grid-item {
         transform: scale(1.2);
       }
-      .new-tag {
-  display: inline-block;
-  background: #ff4757;
-  color: #ffd500;
+.grid-item {
+  position: relative;
+}
+
+.new-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ffd500;
+  color: #fff;
   font-size: 12px;
   font-weight: bold;
   padding: 3px 8px;
   border-radius: 12px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
   z-index: 10;
-  opacity: 0.8; 
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .new-tag {
+    top: 4px;
+    left: 4px;
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}
 }
 .grid-item {
   position: relative; /* Ensure the badge is positioned relative to the item */
