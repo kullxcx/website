@@ -8,7 +8,7 @@
     <style>
 body {
   background-color: #252525;
-  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F006%2F893%2F893%2Flarge_2x%2Ffire-flames-on-black-background-free-photo.jpg&f=1&nofb=1&ipt=99dc5335bcb0c8c1596e63adc3490d013f2f4ffe57b12b156660c095f6542ff3');
+  background-image: url('https://usagif.com/wp-content/uploads/gifs/fire-22.gif');
   background-size: cover;
   background-repeat: no-repeat;
       align-items: center;  
@@ -38,60 +38,6 @@ body {
             width: 150px;
             height: 150px;
         }
-         .cylinder-container {
-      perspective: 1000px;
-      width: 400px;
-      height: 400px;
-      position: center;
-    }
-    .cylinder {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      transform-style: preserve-3d;
-      animation: rotate 8s linear infinite;
-    }
-    @keyframes rotate {
-      from { transform: rotateY(0deg);}
-      to { transform: rotateY(360deg);}
-    }
-    .cylinder-face {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 1600px;
-      height: 4000px;
-      transform-origin: center center -200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-    }
-    /* Position each face at 120deg intervals */
-    .cylinder-face:nth-child(1) { transform: rotateY(0deg)   translateZ(200px);}
-    .cylinder-face:nth-child(2) { transform: rotateY(120deg) translateZ(200px);}
-    .cylinder-face:nth-child(3) { transform: rotateY(240deg) translateZ(200px);}
-
-.cylinder-face img {
-  width: 160px;             /* Fixed width */
-  height: 300px;            /* Fixed height for a square aspect ratio */
-  object-fit: cover;        /* Prevents stretching, crops overflow */
-  border-radius: 16px;
-  transition: transform 0.3s, filter 0.3s;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
-}
-    .cylinder-face:hover img {
-      transform: scale(1.15) rotate(6deg);
-      filter: brightness(1.1) saturate(1.5);
-      box-shadow: 0 16px 32px rgba(0,0,0,0.65);
-    }
-    .caption {
-      margin-top: 12px;
-      font-size: 1rem;
-      color: #eee;
-      text-shadow: 0 1px 4px #000;
-      text-align: center;
-    }
     </style>
 </head>
 <body>
@@ -104,27 +50,5 @@ body {
                     <h1>STYLE 2025</h1>
                                 <h1>coming soon</h1>
         </div>
-            </header>
-    <article>
-        <section>
-          <div class="cylinder-container">
-    <div class="cylinder">
-      <div class="cylinder-face">
-        <img src="" alt="Image 1">
-        <div class="caption">SUMMER</div>
-      </div>
-      <div class="cylinder-face">
-        <img src="image2.jpg" alt="Image 2">
-        <div class="caption">Caption for Image 2</div>
-      </div>
-      <div class="cylinder-face">
-        <img src="image3.jpg" alt="Image 3">
-        <div class="caption">Caption for Image 3</div>
-      </div>
-    </div>
-  </div>
-    <footer>
-        <p>Author: Ash Kull</p>
-    </footer>
 </body>
 </html>
