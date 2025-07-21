@@ -144,6 +144,24 @@
       .grid-item {
         transform: scale(1.2);
       }
+          .new-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ffe000;
+  color: #0000;
+  padding: 3px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 10;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px #0005;
+  pointer-events: none;
+}
+.grid-item {
+  position: relative;
+}
     }
     .preview-modal {
       display: none;
@@ -292,6 +310,7 @@
     <br><h2>Posts</h2>
     <div class="grid-container">
             <div class="grid-item" data-images='["flowers.jpeg"]'>
+                <span class="new-tag">New</span>
         <img src="flowers.jpeg" alt="I embroidered my jeans w/ flowers <3">
           <div class="caption">Embroidery</div>
             </div>
