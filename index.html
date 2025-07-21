@@ -140,9 +140,6 @@
     .grid-item img {
       width: 100%;
     }
-.grid-item {
-  position: relative;
-}
         @media (min-width: 1024px) {
       .grid-item {
         transform: scale(1.2);
@@ -164,33 +161,8 @@
       display: block;
       max-width: 90%;
       max-height: 90%;
-
-.new-tag {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #ffe000;
-  color: #000000;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 12px;
-  z-index: 10;
-  opacity: 0.85;
-}
-
-@media (max-width: 600px) {
-  .new-tag {
-    top: 4px;
-    left: 4px;
-    font-size: 10px;
-    padding: 2px 6px;
-  }
 }
 }
-}
-.grid-item {
-  position: relative; /* Ensure the badge is positioned relative to the item */
 }
     }
     .preview-modal {
