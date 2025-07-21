@@ -144,6 +144,22 @@
       .grid-item {
         transform: scale(1.2);
       }
+      .new-tag {
+  display: inline-block;
+  background: #ff4757;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 12px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+.grid-item {
+  position: relative; /* Ensure the badge is positioned relative to the item */
+}
     }
     .preview-modal {
       display: none;
@@ -268,9 +284,11 @@
     <div class="thumbnail" id="thumbnailContainer"></div>
     <div class="caption" id="imgCaption"></div>
   </div>
+
     <br><h2>Posts</h2>
     <div class="grid-container">
             <div class="grid-item" data-images='["flowers.jpeg"]'>
+                  <span class="new-tag">NEW</span>
         <img src="flowers.jpeg" alt="I embroidered my jeans w/ flowers <3">
           <div class="caption">Embroidery</div>
             </div>
