@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: white;
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0 0 0;
+    }
+    .image-container {
+      position: relative;
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .image-container img {
+      width: 320px;
+      max-width: 100%;
+      display: block;
+      height: auto;
+    }
+    .image-text {
+      position: absolute;
+      top: 50%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      text-align: center;
+      display: inline-block;
+      margin: 0;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .tab {
+      padding: 10px 65px;
+      cursor: pointer;
+      margin: 0 5px;
+      color: white;
+      text-decoration: none; 
+    }
+    .tab.active {
+      background-color: #555;
+    }
+    .profile-pic {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+    }
+    .profile-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .profile-info h1, .profile-info p {
+      margin: 5px 0;
+    }
+      .image-container img {
+        width: 80vw;
+        max-width: 320px;
+      }
+      .image-text {
+        top: 50%;
+        left: 52%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        gap: 10px;
+        white-space: normal;
+      }
+      }
+    }
+  </style>
+</head>
+<body>
+      <h1>Vbuck Generator</h1>
+    </div>
+
+    </div>
+    <br>
+
+    <div class="image-container">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.unrealengine.com%2Ffortnite-vbucks-1200x1200-1200x1200-8050abc986bf.png&f=1&nofb=1&ipt=8fb5fbd6196cfb8b5f7c27dd73fbaf5a571c36b1791ad77134b6616e5cfe6076" alt="vbuck">
+      <div class="image-text">
+<br>
+        <span> you may only download 1 vbuck at a time.</span>
+        <button aria-label="download" onclick="window.open('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FGzpT8_8U-1U%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=6a2f5cb63a1f9fe5179097d202e1d68b73350021b47a7e532f437a26d0a84a69/','_blank')">Open</button>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>
