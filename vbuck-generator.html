@@ -1,7 +1,18 @@
 <!DOCTYPE html>
-<html><head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vbuck Generator</title>
   <style>
+    /* Page basics */
+    :root{
+      --notif-width: 260px;
+      --notif-right: 20px;
+      --notif-top: 20px;
+      --notif-bg: rgba(0,0,0,0.72);
+      --notif-color: #fff;
+    }
     body {
       background-color: white;
       background-size: cover;
@@ -10,51 +21,31 @@
       color: black;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
+
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 20px;
     }
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 0 0 0;
-    }
-    .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+
+    h1, h2 { text-align:center; margin: 10px 0; }
+
     .image-container {
-      position: relative;
-      text-align: center;
-      color: white;
-      margin-bottom: 20px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
+      display:flex;
+      justify-content:center;
+      width:100%;
+      margin: 10px 0 30px;
     }
     .image-container img {
-      width: 320px;
-      max-width: 100%;
-      display: block;
+      width: 80vw;
+      max-width: 320px;
       height: auto;
+      display:block;
     }
-    .image-text {
-      position: absolute;
-      top: 50%;
-      left: 60%;
-      transform: translate(-50%, -50%);
-      font-size: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-    }
+
     button {
       background-color: #4CAF50;
       color: black;
@@ -62,72 +53,177 @@
       padding: 8px 14px;
       text-align: center;
       display: inline-block;
-      margin: 0;
+      margin: 6px;
       cursor: pointer;
       font-size: 16px;
       border-radius: 6px;
     }
-    .tabs {
+
+    .comments {
+      max-width: 700px;
+      width: 95%;
+      margin: 20px auto;
+      text-align: left;
+    }
+    .comments p { margin: 6px 0; }
+
+    /* Notification box on the right side */
+    .notification {
+      position: fixed;
+      right: var(--notif-right);
+      top: var(--notif-top);
+      width: var(--notif-width);
+      max-width: calc(100vw - 40px);
+      background: var(--notif-bg);
+      color: var(--notif-color);
+      padding: 12px 14px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
       display: flex;
-      justify-content: center;
-      margin-top: 20px;
+      gap: 10px;
+      align-items: center;
+      z-index: 9999;
+      transition: transform 300ms ease, opacity 300ms ease;
+      font-size: 14px;
+      line-height: 1.2;
     }
-    .tab {
-      padding: 10px 65px;
-      cursor: pointer;
-      margin: 0 5px;
-      color: white;
-      text-decoration: none; 
+
+    .notification .title {
+      font-weight: 700;
+      font-size: 13px;
+      color: #ffd54f;
     }
-    .tab.active {
-      background-color: #555;
+
+    .notification .msg {
+      flex: 1;
+      opacity: 1;
+      transition: opacity 300ms ease;
     }
-    .profile-pic {
+
+    .notification .msg.fade-out {
+      opacity: 0;
+    }
+
+    /* small icon circle */
+    .notification .icon {
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      width: 150px;
-      height: 150px;
+      background: linear-gradient(135deg,#ffd54f, #ff7f50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #222;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
     }
-    .profile-info {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .profile-info h1, .profile-info p {
-      margin: 5px 0;
-    }
-      .image-container img {
-        width: 80vw;
-        max-width: 320px;
-      }
-      .image-text {
-        top: 50%;
-        left: 52%;
-        transform: translate(-50%, -50%);
-        font-size: 20px;
-        gap: 10px;
-        black: normal;
-      }
-h1 {text-align: center;}
-h2 {text-align: center;}
-div {text-align: center;}
+
+    /* responsive: move to bottom on very small screens */
+    @media (max-width: 420px) {
+      .notification {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        bottom: 16px;
+        top: auto;
+        width: calc(100% - 32px);
       }
     }
   </style>
 </head>
 <body>
-      <h1>Vbuck Generator</h1>
+  <div class="container">
+    <h1>Vbuck Generator</h1>
+
+    <div class="image-container">
+      <img alt="V-Bucks" src="https://cdn2.unrealengine.com/fortnite-vbucks-1200x1200-8050abc986bf.png" />
     </div>
 
-    </div>
-    <br>
-      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.unrealengine.com%2Ffortnite-vbucks-1200x1200-1200x1200-8050abc986bf.png&f=1&nofb=1&ipt=8fb5fbd6196cfb8b5f7c27dd73fbaf5a571c36b1791ad77134b6616e5cfe6076" alt="vbuck" class="center" width="200" height="200"
-      <br>
-      <br>
-
-        <span> <h2>you may only download 1 vbuck at a time.</h2> <button aria-label="download" onclick="window.open('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FGzpT8_8U-1U%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=6a2f5cb63a1f9fe5179097d202e1d68b73350021b47a7e532f437a26d0a84a69/','_blank')">Download Vbuck</button>
-          <h1>Recent Comments</h1>
-          <h2> Miklo: I don get the vbuck. :(</p1>
+    <div>
+      <h2>You may only download 1 vbuck at a time.</h2>
+      <div style="text-align:center;">
+        <button aria-label="download" onclick="window.open('#download','_blank')">Download V-Bucks</button>
       </div>
     </div>
+
+    <div class="comments" role="region" aria-label="recent comments">
+      <h1 style="margin-top: 28px;">Recent Comments</h1>
+      <p><strong>Miklo:</strong> I don get the vbuck. :(</p>
+    </div>
+  </div>
+
+  <!-- Notification box -->
+  <div class="notification" id="notification" role="status" aria-live="polite" aria-atomic="true">
+    <div class="icon">VB</div>
+    <div style="display:flex;flex-direction:column;width:100%;">
+      <div class="title">(8) People just claimed a vbuck!</div>
+      <div class="msg" id="notif-text">2879 vbucks claimed today!</div>
+    </div>
+  </div>
+
+  <script>
+    // Messages to cycle through
+    const messages = [
+      "Miklo: i don get the vbuck :(",
+      "Justin Paul: where do i claim it?",
+      "Timmy Skyblock Tips: SUBSCRIBE TO ME ON YOUTUBE!.",
+      "Block Smelter: thank for vbuck",
+      "Wormboy298: this isnt enough to buy anything with!!! >:(",
+      "Fortballs: i got a bonus 100 vbuck",
+      "SammyGamer27: thank you for the vbuck!",
+      "Fortlord: I got 2!"
+    ];
+
+    const textEl = document.getElementById('notif-text');
+    let idx = 0;
+    let changing = false;
+
+    function showMessage(index) {
+      // Fade out, change text, fade in
+      if (!textEl) return;
+      // Add fade-out class
+      textEl.classList.add('fade-out');
+      // After fade out duration, change the text and remove fade-out
+      setTimeout(() => {
+        textEl.textContent = messages[index];
+        textEl.classList.remove('fade-out');
+      }, 300); // should match CSS transition time
+    }
+
+    // Cycle messages every 3.5 seconds
+    showMessage(idx);
+    idx = (idx + 1) % messages.length;
+    const interval = setInterval(() => {
+      showMessage(idx);
+      idx = (idx + 1) % messages.length;
+    }, 3500);
+
+    // Pause cycling when user hovers over the notification
+    const notif = document.getElementById('notification');
+    notif.addEventListener('mouseenter', () => clearInterval(interval));
+    // On mouse leave restart cycling
+    notif.addEventListener('mouseleave', () => {
+      // Small safety: ensure only one interval is active
+      // Start a new interval
+      setTimeout(() => {
+        // find current message index so we continue from the next message
+        idx = (messages.indexOf(textEl.textContent) + 1) % messages.length;
+        setInterval(() => {
+          showMessage(idx);
+          idx = (idx + 1) % messages.length;
+        }, 3500);
+      }, 200);
+    });
+
+    // Optional: Respect prefers-reduced-motion by disabling fade animation
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      textEl.style.transition = 'none';
+    }
+  </script>
+</body>
+</html>
       </div>
     </div>
   </div>
