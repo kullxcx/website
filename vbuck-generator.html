@@ -119,7 +119,40 @@
       flex-shrink: 0;
     }
 
-    /* responsive: move to bottom on very small screens */
+    /* Popup (moved to top-level so rules apply correctly) */
+    .popup {
+      position: fixed;
+      top: 8%;
+      left: 20px;
+      background: rgba(0,0,0,0.8);
+      padding: 10px;
+      z-index: 10000;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+    }
+    .popup.right {
+      right: 20px;
+      left: auto;
+    }
+    .close-btn {
+      color: #fff;
+      font-size: 24px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      background: transparent;
+      border: none;
+    }
+    .popup img {
+      max-width: 350px;
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* responsive: move notification to bottom on very small screens */
     @media (max-width: 420px) {
       .notification {
         left: 50%;
@@ -128,37 +161,17 @@
         bottom: 16px;
         top: auto;
         width: calc(100% - 32px);
-        .popup {
-  position: fixed;
-  top: 8%;
-  left: 20px; /* Left popup default position */
-  background: rgba(0,0,0,0.8);
-  padding: 10px;
-  z-index: 9999;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-}
-.popup.right {
-  right: 20px;
-  left: auto; /* Override left for right popup */
-}
-.close-btn {
-  color: #fff;
-  font-size: 24px;
-  margin-right: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-.popup img {
-  max-width: 350px;
-  border-radius: 4px;
-}
-@media (max-width: 900px) {
-  .popup {
-    display: none !important;
-  }
-}
+      }
+    }
+
+    /* If you want to hide the popup on small screens, keep this; otherwise remove it */
+    @media (max-width: 900px) {
+      .popup {
+        /* Comment out the next line if you want popup visible on small screens */
+        display: none !important;
+      }
+    }
+
     .close {
       position: absolute;
       top: 20px;
@@ -186,21 +199,22 @@
       margin-top: 10px;
     }
     .profile-info h1, .profile-info p {
-    margin: 5px 0;
-}
-      }
+      margin: 5px 0;
     }
+
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Vbuck Generator</h1>
-    <div id="popup-left" class="popup">
-  <span class="close-btn" onclick="document.getElementById('popup-left').style.display='none'">&times;</span>
-  <img src="virus.png" alt="brain-removal">
-</div>
+
+    <div id="popup-left" class="popup" role="dialog" aria-modal="false" aria-label="Promo popup">
+      <button class="close-btn" aria-label="close popup" onclick="document.getElementById('popup-left').style.display='none'">&times;</button>
+      <img src="virus.png" alt="brain-removal">
+    </div>
+
     <div class="image-container">
-      <img alt="V-Buck" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.unrealengine.com%2Ffortnite-vbucks-1200x1200-1200x1200-8050abc986bf.png&f=1&nofb=1&ipt=8fb5fbd6196cfb8b5f7c27dd73fbaf5a571c36b1791ad77134b6616e5cfe6076" />
+      <img alt="V-Buck" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.unrealengine.com%2Ffortnite-vbucks-1200x1200-1200x1200-8050abc986bf.png&amp;f=1&amp;nofb=1&amp;ipt=8fb5fbd6196cfb8b5f7c27dd73fbaf5a571c36b1791ad77134b6616e5cfe6076">
     </div>
 
     <div>
@@ -237,7 +251,7 @@
       "SammyGamer27: thank you for the vbuck!",
       "Fortlord: I got 2!",
       "KrustyKrubler: Yay!",
-     "sleeshii_: i messed up my username NOOOOOOOO",
+      "sleeshii_: i messed up my username NOOOOOOOO",
       "darthdoodoo: i like cheese",
       "mrbreast222; thak you",
       "wabbydooby: woah i never made so much in my life",
@@ -253,58 +267,56 @@
       "Zergatronfan99: i love my vbuck. thank you.",
       "kaininjagno: thank you",
       "homerluver66: COOL BEANS!"
-        ];
+    ];
 
     const textEl = document.getElementById('notif-text');
     let idx = 0;
-    let changing = false;
+    let intervalId = null;
 
     function showMessage(index) {
-      // Fade out, change text, fade in
       if (!textEl) return;
-      // Add fade-out class
       textEl.classList.add('fade-out');
-      // After fade out duration, change the text and remove fade-out
       setTimeout(() => {
         textEl.textContent = messages[index];
         textEl.classList.remove('fade-out');
-      }, 300); // should match CSS transition time
+      }, 300);
     }
 
-    // Cycle messages every 3.5 seconds
+    function startCycle() {
+      if (intervalId) return;
+      intervalId = setInterval(() => {
+        showMessage(idx);
+        idx = (idx + 1) % messages.length;
+      }, 3500);
+    }
+    function stopCycle() {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
+
+    // Start cycling
     showMessage(idx);
     idx = (idx + 1) % messages.length;
-    const interval = setInterval(() => {
-      showMessage(idx);
-      idx = (idx + 1) % messages.length;
-    }, 3500);
+    startCycle();
 
     // Pause cycling when user hovers over the notification
     const notif = document.getElementById('notification');
-    notif.addEventListener('mouseenter', () => clearInterval(interval));
-    // On mouse leave restart cycling
-    notif.addEventListener('mouseleave', () => {
-      // Small safety: ensure only one interval is active
-      // Start a new interval
-      setTimeout(() => {
-        // find current message index so we continue from the next message
+    if (notif) {
+      notif.addEventListener('mouseenter', stopCycle);
+      notif.addEventListener('mouseleave', () => {
+        // continue from the next message
         idx = (messages.indexOf(textEl.textContent) + 1) % messages.length;
-        setInterval(() => {
-          showMessage(idx);
-          idx = (idx + 1) % messages.length;
-        }, 3500);
-      }, 200);
-    });
+        startCycle();
+      });
+    }
 
-    // Optional: Respect prefers-reduced-motion by disabling fade animation
+    // Respect prefers-reduced-motion
     const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) {
+    if (prefersReduced && textEl) {
       textEl.style.transition = 'none';
     }
   </script>
 </body>
 </html>
-      </div>
-    </div>
-  </div>
-</body></html>
