@@ -128,6 +128,66 @@
         bottom: 16px;
         top: auto;
         width: calc(100% - 32px);
+        .popup {
+  position: fixed;
+  top: 8%;
+  left: 20px; /* Left popup default position */
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  z-index: 9999;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.popup.right {
+  right: 20px;
+  left: auto; /* Override left for right popup */
+}
+.close-btn {
+  color: #fff;
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.popup img {
+  max-width: 350px;
+  border-radius: 4px;
+}
+@media (max-width: 900px) {
+  .popup {
+    display: none !important;
+  }
+}
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 15%;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .thumbnail {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+    }
+    .thumbnail img {
+      width: 50px;
+      cursor: pointer;
+    }
+    .caption {
+      color: #fff;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .profile-info h1, .profile-info p {
+    margin: 5px 0;
+}
       }
     }
   </style>
@@ -135,7 +195,10 @@
 <body>
   <div class="container">
     <h1>Vbuck Generator</h1>
-
+    <div id="popup-left" class="popup">
+  <span class="close-btn" onclick="document.getElementById('popup-left').style.display='none'">&times;</span>
+  <img src="virus.png" alt="brain-removal">
+</div>
     <div class="image-container">
       <img alt="V-Buck" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.unrealengine.com%2Ffortnite-vbucks-1200x1200-1200x1200-8050abc986bf.png&f=1&nofb=1&ipt=8fb5fbd6196cfb8b5f7c27dd73fbaf5a571c36b1791ad77134b6616e5cfe6076" />
     </div>
