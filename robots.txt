@@ -7,4 +7,3 @@ Disallow: /posts.html
 Disallow: /test.html
 Disallow: /style-2025.html
 Disallow: /why-i-made-a-website.html
-Disallow: /vbuck-generator.html
